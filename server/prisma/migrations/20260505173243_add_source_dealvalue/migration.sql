@@ -1,0 +1,6 @@
+-- CreateEnum
+CREATE TYPE "LeadSource" AS ENUM ('WEBSITE', 'REFERRAL', 'LINKEDIN', 'COLD_CALL', 'EMAIL', 'OTHER');
+
+-- AlterTable
+ALTER TABLE "Lead" ADD COLUMN     "dealValue" DOUBLE PRECISION DEFAULT 0,
+ADD COLUMN     "source" "LeadSource" NOT NULL DEFAULT 'OTHER';

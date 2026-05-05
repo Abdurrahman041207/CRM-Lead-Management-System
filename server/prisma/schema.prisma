@@ -19,6 +19,15 @@ enum LeadStatus {
   WON
 }
 
+enum LeadSource {
+  WEBSITE
+  REFERRAL
+  LINKEDIN
+  COLD_CALL
+  EMAIL
+  OTHER
+}
+
 model User {
   id        Int      @id @default(autoincrement())
   email     String   @unique
@@ -28,6 +37,7 @@ model User {
   updatedAt DateTime @updatedAt
   leads     Lead[]
 }
+  
 
 model Lead {
   id        Int        @id @default(autoincrement())
@@ -36,14 +46,16 @@ model Lead {
   phone     String?
   company   String?
   status    LeadStatus @default(NEW)
+  source    LeadSource @default(OTHER)
+  dealValue Float?     @default(0)
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
 
   assignedToId Int
   assignedTo   User   @relation(fields: [assignedToId], references: [id])
-
   notes Note[]
 }
+
 
 model Note {
   id        Int      @id @default(autoincrement())
