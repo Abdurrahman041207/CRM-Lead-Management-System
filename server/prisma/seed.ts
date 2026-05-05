@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
+import * as bcrypt from 'bcrypt';
 import { Pool } from 'pg';
 
 const connectionString = process.env.DATABASE_URL;
@@ -8,8 +9,19 @@ const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
-  console.log('Seeding database...');
-  // Add your seed data here if needed
+  const hashedPassword = await bcrypt.hash('password123', 10);
+
+  const user = await prisma.user.upsert({
+    where: { email: 'admin@crm.com' },
+    update: {},
+    create: {
+      email: 'admin@crm.com',
+      password: hashedPassword,
+      name: 'Admin User',
+    },
+  });
+
+  console.log('Seeded user:', user);
 }
 
 main()
@@ -17,6 +29,4 @@ main()
     console.error(e);
     process.exit(1);
   })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
+  .finally(() => prisma.$disconnect());
