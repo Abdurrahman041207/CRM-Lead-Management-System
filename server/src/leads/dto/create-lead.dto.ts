@@ -1,13 +1,20 @@
-import { IsEmail, IsNotEmpty, IsOptional, IsEnum, IsString, IsNumber } from 'class-validator';
+import {
+  IsEmail,
+  IsNotEmpty,
+  IsOptional,
+  IsEnum,
+  IsString,
+  IsNumber,
+} from 'class-validator';
 import { LeadStatus, LeadSource } from '@prisma/client';
 
 export class CreateLeadDto {
   @IsNotEmpty()
   @IsString()
-  name: string;
+  name!: string;
 
   @IsEmail()
-  email: string;
+  email!: string;
 
   @IsOptional()
   @IsString()
