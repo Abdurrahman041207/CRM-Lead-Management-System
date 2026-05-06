@@ -36,7 +36,12 @@ export default function LeadFormPage() {
   }, [id, isEdit]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+    
+    if (name === 'phone') {
+      value = value.replace(/\D/g, '');
+    }
+
     setForm((prev) => ({
       ...prev,
       [name]: name === 'dealValue' ? Number(value) : value,
@@ -82,7 +87,7 @@ export default function LeadFormPage() {
           </div>
           <div>
             <label className="block text-sm text-gray-400 mb-1">Phone</label>
-            <input name="phone" value={form.phone} onChange={handleChange}
+            <input name="phone" type="tel" value={form.phone} onChange={handleChange}
               className="w-full p-3 bg-gray-700 rounded-lg border border-gray-600 text-white focus:border-blue-500 focus:outline-none" />
           </div>
           <div>
