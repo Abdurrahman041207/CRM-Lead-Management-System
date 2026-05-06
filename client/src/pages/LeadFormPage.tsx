@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import type { Lead } from '../services/leadsApi';
 import { useNavigate, useParams } from 'react-router-dom';
 import { leadsApi } from '../services/leadsApi';
 
@@ -10,7 +11,7 @@ export default function LeadFormPage() {
   const navigate = useNavigate();
   const isEdit = Boolean(id);
 
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<Partial<Lead>>({
     name: '', email: '', phone: '', company: '',
     status: 'NEW', source: 'OTHER', dealValue: 0,
   });
