@@ -166,19 +166,6 @@ npx prisma db seed
 
 This inserts the default admin user used for local testing.
 
-### 5. Optional Prisma Commands
-
-Open Prisma Studio:
-
-```bash
-npx prisma studio
-```
-
-Generate the Prisma client manually if needed:
-
-```bash
-npx prisma generate
-```
 
 ---
 
@@ -187,7 +174,7 @@ npx prisma generate
 After running the seed script, log in with:
 
 ```text
-Email: admin@crm.com
+Email: admin@example.com
 Password: password123
 ```
 
