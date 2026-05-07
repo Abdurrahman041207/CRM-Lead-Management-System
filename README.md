@@ -91,7 +91,7 @@ This project demonstrates full-stack development across frontend, backend, authe
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Abdurrahman041207/CRM-Lead-Management-System
 cd "CRM Lead Management System"
 ```
 
