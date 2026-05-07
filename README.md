@@ -166,7 +166,6 @@ npx prisma db seed
 
 This inserts the default admin user used for local testing.
 
-
 ---
 
 ## Test Credentials
@@ -231,3 +230,19 @@ If I were extending this further, the next improvements would be:
 - configurable frontend environment variables
 - stronger automated test coverage across lead and note workflows
 - deployment polish and production-grade configuration management
+
+---
+
+## Demo Video
+
+Link: https://drive.google.com/file/d/1-vfDZjHphWu4aLEp_-19orsq8AkVRXpo/view?usp=sharing
+
+---
+
+## Deployment
+
+- Frontend: [Vercel](https://crm-lead-management-system.vercel.app)
+- Backend: [Render](https://crm-lead-management-system.onrender.com)
+- Database: PostgreSQL hosted on Neon
+
+If login is required, use the test credentials listed above.
