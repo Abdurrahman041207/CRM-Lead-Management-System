@@ -53,7 +53,7 @@ export default function LeadsPage() {
         <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}
           className="bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-white">
           <option value="ALL">All Statuses</option>
-          {['NEW','CONTACTED','QUALIFIED','LOST','WON'].map((s) => <option key={s} value={s}>{s}</option>)}
+          {['NEW','CONTACTED','QUALIFIED','PROPOSAL_SENT','LOST','WON'].map((s) => <option key={s} value={s}>{s}</option>)}
         </select>
         <select value={sourceFilter} onChange={(e) => setSourceFilter(e.target.value)}
           className="bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-white">

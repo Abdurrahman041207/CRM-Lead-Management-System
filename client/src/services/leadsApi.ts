@@ -6,7 +6,7 @@ export interface Lead {
   email: string;
   phone?: string;
   company?: string;
-  status: 'NEW' | 'CONTACTED' | 'QUALIFIED' | 'LOST' | 'WON';
+  status: 'NEW' | 'CONTACTED' | 'QUALIFIED' | 'PROPOSAL_SENT' | 'LOST' | 'WON';
   source: 'WEBSITE' | 'REFERRAL' | 'LINKEDIN' | 'COLD_CALL' | 'EMAIL' | 'OTHER';
   dealValue?: number;
   createdAt: string;

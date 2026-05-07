@@ -24,6 +24,7 @@ export default function DashboardPage() {
     { label: 'New', value: byStatus('NEW'), color: 'bg-blue-500' },
     { label: 'Contacted', value: byStatus('CONTACTED'), color: 'bg-yellow-500' },
     { label: 'Qualified', value: byStatus('QUALIFIED'), color: 'bg-purple-500' },
+    { label: 'Proposal Sent', value: byStatus('PROPOSAL_SENT'), color: 'bg-orange-500' },
     { label: 'Won', value: byStatus('WON'), color: 'bg-green-500' },
     { label: 'Lost', value: byStatus('LOST'), color: 'bg-red-500' },
     { label: 'Total Pipeline', value: `$${totalDealValue.toLocaleString()}`, color: 'bg-indigo-600' },

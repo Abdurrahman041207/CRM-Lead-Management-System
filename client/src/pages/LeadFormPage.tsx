@@ -3,7 +3,7 @@ import type { Lead } from '../services/leadsApi';
 import { useNavigate, useParams } from 'react-router-dom';
 import { leadsApi } from '../services/leadsApi';
 
-const statuses = ['NEW', 'CONTACTED', 'QUALIFIED', 'LOST', 'WON'];
+const statuses = ['NEW', 'CONTACTED', 'QUALIFIED', 'PROPOSAL_SENT', 'LOST', 'WON'];
 const sources = ['WEBSITE', 'REFERRAL', 'LINKEDIN', 'COLD_CALL', 'EMAIL', 'OTHER'];
 
 export default function LeadFormPage() {

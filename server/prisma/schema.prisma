@@ -15,6 +15,7 @@ enum LeadStatus {
   NEW
   CONTACTED
   QUALIFIED
+  PROPOSAL_SENT
   LOST
   WON
 }
